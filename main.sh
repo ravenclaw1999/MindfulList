@@ -5,7 +5,6 @@ echo 'sudo pip3 install flask_mongo' >> ~/.customize_environment
 echo 'sudo pip3 install bcrypt' >> ~/.customize_environment
 echo 'sudo pip3 install dnspython' >> ~/.customize_environment
 
-
 export FLASK_APP=app.py
 export FLASK_DEBUG=1
 
