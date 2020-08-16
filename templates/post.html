@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Mindful List</title>
+   <!-- Google Fonts CSS Link-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- bootstrapCDN CSS Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
+	<link href="../static/style.css?q={{time}}" rel="stylesheet" type="text/css" />
+
+  <!-- Bootstrap JS, Popper.js, and jQuery  Links-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- jQuery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js">
+
+	</script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-link active linkss" href="#">Home</a>
+      {% if session: %}
+      <a class="nav-link linkss" href="/todo">To Do</a>
+      <a class="nav-link linkss" href="/post">Post <span class="sr-only">(current)</span></a>
+      <a class="nav-link linkss" href="/login">Logout</a>
+      {% else %}
+      <a class="nav-link linkss" href="/login">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<div class="container posting">
+  <h1>Write a Post!</h1> <br>
+          <div class="container">
+              <form method="post" action="/post">
+                  <div class="form-group col-md-12 my-1">
+                      <label for="name">Title: </label>
+                      <input name="post-title" type="text">
+                  </div>
+                  <div class="form-group col-md-12 my-1">
+                      <label for="message">Message: </label>
+                      <textarea id="post-message" name="post-message" rows="5" cols="60"></textarea>              
+                  </div>
+                  <input type="submit" value="Post" class="btn btn-primary"/>
+              </form>
+          </div>
+      </div>
+
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posts: </h2>
+    <div class="container">
+        {% for post in posts%}
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h3 class="card-title">Title: {{post.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Date Posted: {{post.date.strftime('%Y-%m-%d')}}</h6>
+                    <p class="card-text">{{post.message}}</p>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+    
+<br /><br /><br /><br />
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:15px 20px;text-align: justify;">
+  <p>Become a more productive you. See how other users have used Mindful List to improve their quality of life. </p>
+  </div>
+</div>
+
+
+  <div class="bgimg-3">
+    <div class="container" style="color:white;">
+      <!-- Footer -->
+          <footer class="page-footer font-small unique-color-dark">
+
+            <div>
+              <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                  <!-- Grid column -->
+                  
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                    <!-- Facebook -->
+                    <a class="fb-ic">
+                      <i class="fab fa-facebook-f white-text mr-4"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a class="tw-ic">
+                      <i class="fab fa-twitter white-text mr-4"> </i>
+                    </a>
+                    <!-- Google +-->
+                    <a class="gplus-ic">
+                      <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                    </a>
+                    <!--Linkedin -->
+                    <a class="li-ic">
+                      <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                      <i class="fab fa-instagram white-text"> </i>
+                    </a>
+
+                  </div>
+                  <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+              </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+              <!-- Grid row -->
+              <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                  <!-- Content -->
+                  <h6 class="text-uppercase font-weight-bold">Mindful List</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>We created Mindful List to help people during and after quarantine.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold">Features</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    <a href="#!" style="color:white">Planner</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Calendar</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Notifications</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Premium</a>
+                  </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold">Quick links</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    <a href="#!" style="color:white">Your Account</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Become an Affiliate</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Share a post</a>
+                  </p>
+                  <p>
+                    <a href="#!" style="color:white">Help</a>
+                  </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                  <p>
+                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                  <p>
+                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                  <p>
+                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href="https://codenext.withgoogle.com/" style="color:white"> Code Next</a>
+            </div>
+            <!-- Copyright -->
+
+          </footer>
+<!-- Footer -->
+    </div>
+  </div>
+
+  
+
+
+
+  
+</body>
+</html>

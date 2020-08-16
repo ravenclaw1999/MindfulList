@@ -1,0 +1,1 @@
+Just press the green RUN button to run the website. Index.html is in Templates foldder and the css and js is in the static folder. They have to be in those folders in order for the website to run.

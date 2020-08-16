@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,300&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif; 
+  /* is it ok if we pick a different font? */
+  color: black;
+}
+
+.title{
+  font-family: 'Zilla Slab', serif;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("https://images.unsplash.com/photo-1596920691408-b1df63fda141?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("https://images.unsplash.com/photo-1596999034018-abea57f9f54b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  min-height: 500px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-family: 'Zilla Slab', serif;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  font-family: 'Zilla Slab', serif;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+.logo{
+  width: 50px;
+}
+
+.homelogo{
+  width: 75px;
+}
+
+.posting{
+  text-align: center;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+.footer{
+  color: white;
+}
+
+
+/* ToDo Page CSS */
+.sideBar{
+  background-color: rgba(196, 196, 196, 0.26);
+  height: 100vh;
+}
+
+/* position: absolute;
+width: 381px;
+height: 933px;
+left: 1059px;
+top: 91px;
+
+background: rgba(196, 196, 196, 0.26); */
+
+.taskDoc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+}
+
+/* .todo-page{
+  background: linear-gradient(to right, #ffff66 0%, #ff66ff 100%);
+} */
+/* position: absolute;
+width: 448px;
+height: 696px;
+left: 202px;
+top: 189px; */
+.toDoDoc{
+  height: 100vh;
+  width: 80vh;
+  background-color: rgb(235, 235, 174);
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+}
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.card {
+    margin-top: 10vmin;
+    font-family: 'Lato', sans-serif;
+}
+.card-title {
+    font-family: 'Zilla Slab', serif;
+}
+.navbar-brand {
+    font-family: 'Zilla Slab', serif;
+}
+
+.btn {
+    font-family: 'Zilla Slab', serif;
+}
+
+.form-control {
+    font-family: 'Lato', sans-serif;
+}
+/* 
+heart css checkbox: http://www.csscheckbox.com/checkbox/823/heart-checkbox/ 
+CSS CHECKBOX - README AND INSTALLATION GUIDE - www.csscheckbox.com
+1. Open the included file 'style.css' and copy the CSS code into your own stylesheet
+2. Change the classes of your HTML Checkboxes to 'css-checkbox'
+3. Change the classes of your HTML Checkbox Labels to 'css-label'
+4. MAKE SURE that the ID of your Checkbox matches the FOR attribute of your HTML Label tag
+Refer to the included file 'demo.html' for HTML samples and syntax.
+*/
+
+input[type=checkbox].css-checkbox {
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:20px;
+    height:15px; 
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -15px;
+    text-decoration: line-through;
+    background-color: #f2f2f2;
+}
+label.css-label {
+background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_1437560032a3e1345ce3a7bb5fec77cc.png);
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}

@@ -1,0 +1,148 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>List</title>
+   <!-- Google Fonts CSS Link-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+
+	<!-- bootstrapCDN CSS Link -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	 crossorigin="anonymous">
+
+	<link href="../static/style.css?q={{time}}" rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap JS, Popper.js, and jQuery  Links-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	 crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+	 crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+	 crossorigin="anonymous">
+	</script>
+	<!-- jQuery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js">
+
+	</script>
+</head>
+
+<body class="todo-page">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav  ml-auto">
+        <a class="nav-link active" href="/index">Home</a>
+        {% if session: %}
+        <a class="nav-link linkss" href="/todo">To Do <span class="sr-only">(current)</span></a>
+        <a class="nav-link linkss" href="/post">Post</a>
+        <a class="nav-link linkss" href="/login">Logout</a>
+        {% else %}
+        <a class="nav-link linkss" href="/login">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+          
+      <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8 mr-sm-auto">
+
+                <div class="card mx-auto" style="width: 30rem;">
+                  <div class="card-body bg-info text-white">
+                    <h5 class="card-title">Self-Care List</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <input type="checkbox" name="checkbox1" id="checkbox1" class="css-checkbox" />
+                        <label for="checkbox1" class="css-label">Meditate for 10 minutes</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" name="checkbox1" id="checkbox2" class="css-checkbox" />
+                      <label for="checkbox2" class="css-label">Put on a face mask for 10 minutes</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" name="checkbox1" id="checkbox3" class="css-checkbox" />
+                      <label for="checkbox3" class="css-label">Call a friend for 20 minutes</label>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-sm btn-danger card-link">Publish list</button>
+                    <a href="#" class="card-link">Retire List</a>
+                  </div>
+                </div>
+
+                <div class="card mx-auto" style="width: 30rem;">
+                  <div class="card-body bg-info text-white">
+                    <h5 class="card-title">Activity List</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <input type="checkbox" name="checkbox1" id="checkbox1" class="css-checkbox" />
+                        <label for="checkbox1" class="css-label">Stretch for 10 minutes</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" name="checkbox1" id="checkbox2" class="css-checkbox" />
+                      <label for="checkbox2" class="css-label">Jam out to your favorite playlist for 10 minutes</label>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-sm btn-danger card-link">Publish list</button>
+                    <a href="#" class="card-link">Retire List</a>
+                  </div>
+                </div>
+
+                <div class="card mx-auto" style="width: 30rem;">
+                  <div class="card-body bg-info text-white">
+                    <h5 class="card-title">General Reminders</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <input type="checkbox" name="checkbox1" id="checkbox1" class="css-checkbox" />
+                        <label for="checkbox1" class="css-label">Feed the dogs</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" name="checkbox1" id="checkbox2" class="css-checkbox" />
+                      <label for="checkbox2" class="css-label">Jam out to your favorite playlist for 10 minutes</label>
+                    </li>
+                    <li class="list-group-item">
+                      <input type="checkbox" name="checkbox1" id="checkbox3" class="css-checkbox" />
+                      <label for="checkbox3" class="css-label">Call mom before dinner</label>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-sm btn-danger card-link">Publish List</button>
+                    <a href="#" class="card-link">Retire List</a>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-4 d-none d-md-block sidebar bg-light">
+                <div class="sidebar-sticky">
+                  <div class="px-2">
+                      <h5 class="card-title">List Title</h5>
+                      <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Enter title here..." aria-label="Enter title here..." aria-describedby="basic-addon1">
+                  </div>
+                  <div class="px-2">
+                      <h5 class="card-title">Task</h5>
+                      <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Enter task information here..." aria-label="Enter title here..." aria-describedby="basic-addon1">
+                  </div>
+                  </div>
+
+                  <button type="button" class="btn ml-auto btn-sm btn-danger card-link">Make List</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+  </body>
+
+</html>
